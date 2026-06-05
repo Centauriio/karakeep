@@ -8,7 +8,9 @@ services:
       # - /path/to/your/directory:/data
       - data:/data
     ports:
-      - 3000:3000
+      - 4567:4567
+    networks:
+      - dokploy-network  
     env_file:
       - .env
     environment:
@@ -42,3 +44,6 @@ services:
 volumes:
   meilisearch:
   data:
+networks:
+  dokploy-network:
+    external: true  
