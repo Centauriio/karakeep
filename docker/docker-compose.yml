@@ -16,7 +16,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.docker.network=dokploy-network
-      - traefik.http.routers.karakeep.rule=Host(`karakeep.yourdomain.com`)
+      - traefik.http.routers.karakeep.rule=Host(`kara.sentl.app`)
       - traefik.http.routers.karakeep.entrypoints=websecure
       - traefik.http.routers.karakeep.tls.certresolver=letsencrypt
       - traefik.http.services.karakeep.loadbalancer.server.port=3000
