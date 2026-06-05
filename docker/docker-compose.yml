@@ -1,5 +1,5 @@
 services:
-  karakeep:
+  web:
     image: ghcr.io/karakeep-app/karakeep:${KARAKEEP_VERSION:-release}
     restart: unless-stopped
     env_file:
@@ -19,7 +19,7 @@ services:
       - traefik.http.routers.karakeep.rule=Host(`karakeep.yourdomain.com`)
       - traefik.http.routers.karakeep.entrypoints=websecure
       - traefik.http.routers.karakeep.tls.certresolver=letsencrypt
-      - traefik.http.services.karakeep.loadbalancer.server.port=3000
+      - traefik.http.services.web.loadbalancer.server.port=3000
 
   chrome:
     image: gcr.io/zenika-hub/alpine-chrome:124
